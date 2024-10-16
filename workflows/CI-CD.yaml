@@ -1,0 +1,43 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # This triggers on push to main branch
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # If you have any minification, compression, or build steps, add them here.
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'  # Only deploy on push to main branch
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  # The secret key you stored in GitHub
+        run: |
+          # Create SSH key from secret
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan andreagenovese.eu >> ~/.ssh/known_hosts  # Replace with your actual domain
+
+      - name: Deploy to Server
+        run: |
+          # Securely copy website files to the server
+          scp -r ./andrea-genovese/* andrea@andreagenovese.eu:/home/andrea/public_html/
