@@ -435,6 +435,9 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
+.header--logo img {
+  width: 18%;
+}
 .header--nav-toggle {
   display: flex;
   width: 50px;
@@ -484,12 +487,12 @@ body {
   visibility: visible;
   transition: opacity 0.4s ease-in-out 0.4s;
 }
+
 @media (max-width: 767px) {
-  .header--cta {
-    display: none;
+  .header--logo img {
+    width: 27%;
   }
 }
-
 .side-nav {
   position: relative;
   display: flex;
@@ -569,7 +572,7 @@ body {
 }
 @media (max-width: 1180px) {
   .intro {
-    max-width: 100%;
+    max-width: 90%;
   }
 }
 .intro--banner {
@@ -704,7 +707,7 @@ body {
     height: 360px;
   }
   .intro--banner h1 {
-    font-size: 55px;
+    font-size: 45px;
   }
   .intro--banner img {
     width: 50%;
@@ -857,6 +860,9 @@ body {
   }
 }
 @media (max-width: 767px) {
+  .work {
+    height: 80%;
+  }
   .work--lockup .slider {
     width: 75%;
   }
@@ -1014,7 +1020,6 @@ body {
   .about--banner {
     height: 305px;
     align-items: center;
-    margin-top: 50px;
   }
   .about--banner::before {
     top: 0;
@@ -1062,8 +1067,7 @@ body {
     left: 310px;
   }
   .about--banner h2 {
-    margin-top: 70px;
-    font-size: 55px;
+    font-size: 45px;
   }
   .about--banner h2::before {
     top: 43px;
