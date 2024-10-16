@@ -1,0 +1,57 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+.card-mobile {
+    border: 1px solid #ccc; /* Border for the card */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensures images don’t overflow */
+    margin: 0 auto; /* Center align the card */
+    text-align: center; /* Center text */
+    max-width: 90%; /* Max width for the card */
+}
+
+/* Image styles */
+.card-mobile img {
+    width: 100%; /* Make the image fill the card */
+    height: 400px; /* Set a fixed height */
+    object-fit: cover; /* Cover the card area */
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden; /* Hide overflowing cards */
+    width: 100%; /* Full width for carousel */
+}
+
+.carousel__track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel__slide {
+    min-width: 100%; /* Full width for each slide */
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.carousel__button--left {
+    left: 10px;
+}
+
+.carousel__button--right {
+    right: 10px;
+}
