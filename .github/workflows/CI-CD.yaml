@@ -35,7 +35,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan andreagenovese.eu >> ~/.ssh/known_hosts  # Replace with your actual domain
+          ssh-keyscan andreagenovese.eu >> ~/.ssh/id_rsa  # Replace with your actual domain
 
       - name: Deploy to Server
         run: |
