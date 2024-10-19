@@ -62,6 +62,10 @@
         height: 10px
         background-color: $highlight
 
+      p
+        padding-top: 20px
+        width: 90%
+
     a
       padding: 5px 17px 5px 0
       text-decoration: none
@@ -128,11 +132,10 @@
       transition: bottom .2s ease-in-out, left .2s ease-in-out
 
 @media (max-width: 767px)
-
   .about
-
     &--banner
       height: 305px
+      margin-top: 80px
 
       &::before
         top: 0
@@ -154,28 +157,34 @@
           top: 163px
           left: 163px
 
+        p
+          width: 100%
+          padding: 0px
+
       img
         width: 315px
-      &--options
+        margin-bottom: 20px
+
+    &--options
+      margin-top: 20px
       align-items: center
-     
 
-    & > a
-      margin-bottom: 30px
-      width: 100px
-      height: 100px
-    h3
-      position: absolute
-      bottom: -38px
-      left: 0px
-      font-size: 14px
+      & > a
+        margin-bottom: 30px
+        width: 80px
+        height: 80px
 
+      h3
+        bottom: -38px
+        left: -4px
+        font-size: 12px
+
+// Media query for medium devices
 @media (max-width: 940px)
-
   .about
-
     &--banner
       height: auto
+      margin-top: 80px
 
       &::before
         left: 155px
@@ -185,6 +194,7 @@
 
       h2
         font-size: 40px
+        margin-top: 20px
 
         &::before
           top: 43px
@@ -194,20 +204,21 @@
           top: 205px
           left: 205px
 
+        p
+          width: 100%
+          padding: 0px
+
       img
         margin-bottom: 20px
 
-
     &--options
       align-items: center
-      margin-top: 10px
 
       & > a
-        width: 90px
-        height: 90px
+        width: 80px
+        height: 80px
+
       h3
-        position: absolute
         bottom: -38px
-        left: 0px
-        font-size: 14px
-        
+        left: -4px
+        font-size: 12px

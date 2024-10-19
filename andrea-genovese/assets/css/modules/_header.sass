@@ -3,10 +3,12 @@
   top: 0
   left: 0
   display: flex
+  flex-direction: row
+  flex-wrap: nowrap // Ensure that the elements don’t wrap to a new line
   width: 100%
   height: 70px
   align-items: center
-  justify-content: space-between
+  justify-content: space-between // Keep logo and toggle aligned at opposite ends
   z-index: 10
 
   &--logo
@@ -65,7 +67,7 @@
     border: none
     opacity: 0
     visibility: hidden
-    transition: opacity .4s ease-in-out, visibility 0s .4s
+    transition: opacity 0.4s ease-in-out, visibility 0s 0.4s
 
     &:focus
       outline: none
@@ -73,11 +75,59 @@
     &.is-active
       opacity: 1
       visibility: visible
-      transition: opacity .4s ease-in-out .4s
-
+      transition: opacity 0.4s ease-in-out 0.4s
 
 @media (max-width: 940px)
   .header
+    height: 60px // Slightly smaller height on tablet-sized screens
+
     &--logo
+      p
+        font-size: 14px // Reduce text size for logos
       img
         width: 40%
+
+    &--nav-toggle
+      width: 40px // Smaller toggle size
+      height: 40px
+
+      span,
+      &::before,
+      &::after
+        width: 14px
+
+      &::before, &::after
+        width: 20px
+
+    &--cta
+      line-height: 24px
+      font-size: 14px
+
+@media (max-width: 600px)
+  .header
+    flex-direction: row // Maintain horizontal alignment for mobile
+    height: auto
+    padding: 10px 0
+    align-items: center // Ensure items stay centered vertically
+
+    &--logo
+      margin-bottom: 0 // Remove the margin to avoid pushing the logo below
+      img
+        width: 40%
+
+    &--nav-toggle
+      width: 35px // Even smaller nav toggle for small mobile
+      height: 35px
+
+      span,
+      &::before,
+      &::after
+        width: 12px
+
+      &::before, &::after
+        width: 18px
+
+    &--cta
+      line-height: 22px
+      font-size: 12px
+      padding: 5px 15px
